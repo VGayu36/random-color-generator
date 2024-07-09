@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <link ref="stylesheet">
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    background: #196ab3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.color{
+    margin-top: 300px;
+    text-align: center;
+}
+#hex{
+    display: block;
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 20px;
+}
+.color button{
+    background: #2c3e50;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <div class="color">
+        <span id="hex">#196ab3</span>
+        <button onclick="generateColor()">GENERATE COLOR</button>
+    </div>
+
+    <script type="text/javascript">
+        function generateColor() {
+            var symbols,color;
+            symbols = "0123456789ABCDEF";
+
+            color = "#";
+            for(var i=0; i<6; i++){
+                color = color + symbols[Math.floor(Math.random() * 16)];
+            }
+            document.body.style.background = color;
+            document.getElementById("hex").innerHTML = color;
+        }
+    </script>
+    
+</body>
+</html>
